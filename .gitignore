@@ -1,0 +1,9 @@
+/.vscode
+/yarn-error.log
+
+/node_modules
+/worker
+/dist
+
+/src/constants.js
+/wrangler.toml
