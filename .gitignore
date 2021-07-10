@@ -5,5 +5,5 @@
 /worker
 /dist
 
-/src/constants.js
+/constants.js
 /wrangler.toml
