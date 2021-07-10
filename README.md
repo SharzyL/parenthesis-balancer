@@ -1,6 +1,6 @@
 # Parenthesis Balancer
 
-Save the world from those who broke the subtle balance of left parentheses and right parentheses.
+Save the world from those who broke the subtle balance between left parentheses and right parentheses.
 
 ## How It Looks Like?
 
@@ -14,7 +14,7 @@ Save the world from those who broke the subtle balance of left parentheses and r
 
 ## Known Issues
 
-Quotation marks are not handled perfectly in current version. Because:
+Quotation marks are not handled perfectly in the current version. Because:
 
 1. The usage of quotation marks in different languages are very complicated (refer to [wikipedia](https://en.wikipedia.org/wiki/Quotation_mark)). 
 2. Apostrophe can be used as the quotation mark. But it can also be used to mark emission (don't) and possessive case (John's and Janes'). 
