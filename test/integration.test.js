@@ -1,11 +1,12 @@
-const fs = require('fs')
-const path = require('path')
-const nock = require('nock')
-const assert = require('assert')
-const Cloudworker = require('@dollarshaveclub/cloudworker')
+import fs from 'fs'
+import path from 'path'
+import assert from 'assert'
+import Cloudworker from '@dollarshaveclub/cloudworker'
+import nock from 'nock'
 
-const { API_URL, WEBHOOK_URL, TOKEN, } = require('../constants')
-const workerScript = fs.readFileSync(path.resolve('dist/worker.js'), 'utf8')
+import { API_URL, WEBHOOK_URL, TOKEN, } from '../constants.js'
+
+const workerScript = fs.readFileSync(path.resolve('worker/script.js'), 'utf8')
 
 describe('Test simple alert', async () => {
     let worker
@@ -62,7 +63,7 @@ describe('Test simple alert', async () => {
 
         const response = await worker.dispatch(req)
 
-        assert.ok(botRequestSent, 'bot request not sent')
         assert.strictEqual(response.status, 200)
+        assert.ok(botRequestSent, 'bot request not sent')
     })
 })

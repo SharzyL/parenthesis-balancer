@@ -1,6 +1,6 @@
-const handler = require('./handler')
+import { handleRequest } from './handler.js'
 
 addEventListener('fetch', (event) => {
     const { request } = event
-    return event.respondWith(handler.handleRequest(request))
+    return event.respondWith(handleRequest(request))
 })

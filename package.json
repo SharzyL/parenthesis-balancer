@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "http server to receive alert",
   "main": "index.js",
+  "type": "module",
   "scripts": {
     "test": "webpack --mode=development && mocha"
   },
@@ -17,5 +18,5 @@
     "nock": "^13.1.1",
     "webpack": "^5.42.1",
     "webpack-cli": "^4.7.2"
-  }
+  },
 }

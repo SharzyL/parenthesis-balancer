@@ -1,8 +1,7 @@
-const assert = require('assert')
-const { balanceParenthesis, PairCannotMatchError } = require('../src/handler')
+import assert from 'assert'
+import { balanceParenthesis, PairCannotMatchError } from '../src/balancer.js'
 
 describe('Test pairing', () => {
-    console.log(balanceParenthesis)
     it('should work for normal pairs', () => {
         assert.strictEqual(balanceParenthesis('World is good'), '')
         assert.strictEqual(balanceParenthesis('('), ')')

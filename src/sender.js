@@ -1,6 +1,6 @@
-const { API_URL, TOKEN } = require('../constants')
+import { API_URL, TOKEN } from '../constants.js'
 
-async function botRequest(method, params) {
+export async function botRequest(method, params) {
     const url = `${API_URL}/bot${TOKEN}/${method}`
     const init = {
         body: JSON.stringify(params),
@@ -12,8 +12,4 @@ async function botRequest(method, params) {
     const response = await fetch(url, init)
     const text = await response.text()
     return JSON.parse(text)
-}
-
-module.exports = {
-    botRequest,
 }
