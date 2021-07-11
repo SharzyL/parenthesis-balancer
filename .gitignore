@@ -2,7 +2,6 @@
 /yarn-error.log
 
 /node_modules
-/worker
 /dist
 
 /constants.js

@@ -1,19 +1,9 @@
-import path from 'path'
-
 let config = {
   target: "webworker",
   entry: {
     worker: "./src/index.js"
   },
-  output: {
-    path: path.resolve('./worker'),
-    filename: 'script.js'
-  },
-
   devtool: "inline-nosources-source-map",
-  experiments: {
-    asyncWebAssembly: true,
-  }
 }
 
 export default (env, argv) => {

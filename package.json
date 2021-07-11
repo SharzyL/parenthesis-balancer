@@ -1,14 +1,16 @@
 {
-  "name": "alertbot",
-  "version": "1.0.0",
-  "description": "http server to receive alert",
-  "main": "index.js",
+  "name": "parenthesis-balancer",
+  "version": "0.0.0",
+  "description": "A telegram bot to balance parentheses in the world",
+  "main": "dist/worker.js",
   "type": "module",
   "scripts": {
-    "test": "webpack --mode=development && mocha"
+    "build": "webpack",
+    "test": "webpack --mode=development && mocha",
+    "publish": "webpack && wrangler publish"
   },
-  "author": "",
-  "license": "ISC",
+  "author": "Sharzy L",
+  "license": "MIT",
   "devDependencies": {
     "@dollarshaveclub/cloudworker": "^0.1.2",
     "eslint": "^7.30.0",
