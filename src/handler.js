@@ -57,15 +57,6 @@ async function handlePut(request) {
     return new Response('ok', { status: 200 })
 }
 
-async function debug(info) {
-    let payload = 'debug: ' + info.toString()
-    await botRequest('sendMessage', {
-        chat_id: 629325599,
-        text: `<pre>${payload}</pre>`,
-        parse_mode: 'HTML',
-    })
-}
-
 async function handleRequest(request) {
     try {
         return await handlePut(request)
@@ -76,7 +67,6 @@ async function handleRequest(request) {
 
         const stack = e.stack || e
         let stackInfo = stack + ''
-        await debug(stackInfo)
 
         return new Response(stackInfo, { status: 500 })
     }
