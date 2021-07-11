@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="512"
+   height="512"
+   viewBox="0 0 135.46667 135.46667"
+   version="1.1"
+   id="svg5"
+   inkscape:export-filename="/home/sharzy/bitmap.png"
+   inkscape:export-xdpi="320"
+   inkscape:export-ydpi="320"
+   inkscape:version="1.1 (c4e8f9ed74, 2021-05-24)"
+   sodipodi:docname="avatar.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview7"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:document-units="px"
+     showgrid="false"
+     inkscape:snap-page="true"
+     inkscape:zoom="0.85253906"
+     inkscape:cx="212.89347"
+     inkscape:cy="243.39061"
+     inkscape:window-width="1276"
+     inkscape:window-height="1392"
+     inkscape:window-x="1920"
+     inkscape:window-y="22"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer2" />
+  <defs
+     id="defs2" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="fg">
+    <g
+       inkscape:label="bg"
+       inkscape:groupmode="layer"
+       id="layer1"
+       sodipodi:insensitive="true">
+      <rect
+         style="fill:#28a7e8;fill-opacity:0.909804;stroke:#000000;stroke-width:0.264586;-inkscape-stroke:none;stop-color:#000000"
+         id="rect882"
+         width="135.46667"
+         height="135.46667"
+         x="0"
+         y="0" />
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-size:105.833px;line-height:1.25;font-family:raleway;-inkscape-font-specification:raleway;stroke-width:0.264583"
+       x="5.7218113"
+       y="104.42348"
+       id="text30992"><tspan
+         sodipodi:role="line"
+         id="tspan30990"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:105.833px;font-family:'Cascadia Code';-inkscape-font-specification:'Cascadia Code';opacity:1;fill:#ffffff;fill-opacity:1;stroke-width:0.264583"
+         x="5.7218113"
+         y="104.42348">()</tspan></text>
+  </g>
+</svg>
