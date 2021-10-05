@@ -38,20 +38,38 @@ async function handlePut(request) {
     } else if ('inline_query' in reqBody && 'query' in reqBody.inline_query) {
         const queryID = reqBody.inline_query.id
         const queryText = reqBody.inline_query.query
-        const balancedText = queryText + balanceParenthesis(queryText)
-        await botRequest('answerInlineQuery', {
-            inline_query_id: queryID,
-            results: [
-                {
-                    type: 'article',
-                    id: Math.random(),
-                    title: balancedText,
-                    input_message_content: {
-                        message_text: balancedText,
+        try {
+            const balancedText = queryText + balanceParenthesis(queryText)
+            await botRequest('answerInlineQuery', {
+                inline_query_id: queryID,
+                results: [
+                    {
+                        type: 'article',
+                        id: Math.random(),
+                        title: balancedText,
+                        input_message_content: {
+                            message_text: balancedText,
+                        },
                     },
-                },
-            ],
-        })
+                ],
+            })
+        } catch (e) {
+            if (e instanceof PairCannotMatchError) {
+                await botRequest('answerInlineQuery', {
+                    inline_query_id: queryID,
+                    results: [
+                        {
+                            type: 'article',
+                            id: Math.random(),
+                            title: 'CANNOT balance your parenthesis',
+                            input_message_content: {
+                                message_text: 'CANNOT balance your parenthesis',
+                            },
+                        },
+                    ],
+                })
+            }
+        }
     }
 
     return new Response('ok', { status: 200 })
