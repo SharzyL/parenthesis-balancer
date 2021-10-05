@@ -35,6 +35,24 @@ async function handlePut(request) {
                 parse_mode: 'HTML',
             })
         }
+    } else if ('inline_query' in reqBody && 'query' in reqBody.inline_query) {
+        const queryID = reqBody.inline_query.id
+        const queryText = reqBody.inline_query.query
+        const balancedText = queryText + balanceParenthesis(queryText)
+        console.log(queryText, balancedText)
+        await botRequest('answerInlineQuery', {
+            inline_query_id: queryID,
+            results: [
+                {
+                    type: 'article',
+                    id: Math.random(),
+                    title: balancedText,
+                    input_message_content: {
+                        message_text: balancedText,
+                    },
+                },
+            ],
+        })
     }
 
     return new Response('ok', { status: 200 })
@@ -54,4 +72,3 @@ export async function handleRequest(request) {
         return new Response(stackInfo, { status: 500 })
     }
 }
-
