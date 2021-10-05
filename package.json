@@ -12,6 +12,7 @@
   "author": "Sharzy L",
   "license": "MIT",
   "devDependencies": {
+    "@cloudflare/wrangler": "^1.19.3",
     "@dollarshaveclub/cloudworker": "^0.1.2",
     "eslint": "^7.30.0",
     "eslint-config-airbnb-base": "^14.2.1",
