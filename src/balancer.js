@@ -12,11 +12,6 @@ const reversiblePairs = [
     '«»', '‹›', '༺༻', '༼༽', '᚜᚛',
 ]
 
-const chaoticPairs = [
-    // it is legal if for each class, there is even number of characters in the class
-    '”„“', '’‚‘', '"', '\'', '🙷🙸🙶', '❜❟❛', '❞❠❝',
-]
-
 export class PairCannotMatchError extends Error {}
 
 export function balanceParenthesis(text) {
@@ -35,17 +30,8 @@ export function balanceParenthesis(text) {
         reversiblePairsCounter.set(pair[0], 0)
     }
 
-    const chaoticPairsCounter = new Map()
-    const chaoticPairsClassifier = new Map()
-    for (const pair of chaoticPairs) {
-        for (const char of pair) {
-            chaoticPairsClassifier.set(char, pair[0])
-        }
-        chaoticPairsCounter.set(pair[0], 0)
-    }
-
     const stack = []
-    for (let i = 0; i < text.length; i++) {
+    for (let i = 0; i < text.length; i += 1) {
         const char = text[i]
         if (pairingMap.get(char) !== undefined) {
             stack.push(char)
@@ -54,13 +40,6 @@ export function balanceParenthesis(text) {
             for (const [, v] of reversiblePairsCounter) {
                 if (v !== 0) {
                     throw new PairCannotMatchError('WORLD IN CRISIS! I cannot balance your symbols!')
-                }
-            }
-            for (const [k, v] of chaoticPairsCounter) {
-                if (v % 2 !== 0) {
-                    throw new PairCannotMatchError('WORLD IN CRISIS! I cannot balance your symbols!')
-                } else {
-                    chaoticPairsCounter.set(k, 0)
                 }
             }
             if (stack.pop() !== reversePairingMap.get(char)) {
@@ -74,13 +53,6 @@ export function balanceParenthesis(text) {
                 reversiblePairsCounter.set(charClass, cnt + 1)
             } else {
                 reversiblePairsCounter.set(charClass, cnt - 1)
-            }
-        }
-        if (chaoticPairsClassifier.get(char) !== undefined) {
-            if (!(char === '\'' && text[i + 1] !== ' ' && text[i - 1] !== ' ')) { // ignore apostrophe surrounds by non-spaces
-                const charClass = chaoticPairsClassifier.get(char)
-                const cnt = chaoticPairsCounter.get(charClass)
-                chaoticPairsCounter.set(charClass, cnt + 1)
             }
         }
     }
@@ -100,21 +72,12 @@ export function balanceParenthesis(text) {
         }
     }
 
-    for (const pair of chaoticPairs) {
-        const cnt = chaoticPairsCounter.get(pair[0])
-        if (cnt % 2 !== 0) {
-            returnChars.push(pair[0])
-        }
-    }
-
     for (let i = stack.length - 1; i >= 0; i -= 1) {
         const char = stack[i]
         if (pairingMap.get(char) !== undefined) {
             returnChars.push(pairingMap.get(char))
-        } else if (reversiblePairsClassifier.get(char) === undefined) {
-            returnChars.push(reversiblePairsClassifier.get(char))
         } else {
-            returnChars.push(chaoticPairsClassifier.get(char))
+            returnChars.push(reversiblePairsClassifier.get(char))
         }
     }
 

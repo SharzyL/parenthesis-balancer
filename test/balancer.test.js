@@ -11,11 +11,7 @@ describe('Test pairing', () => {
     })
 
     it('should be silent for normal sentences', () => {
-        assert.strictEqual(balanceParenthesis('WORLD IN CRISIS!'), '') 
-    })
-
-    it('should handle apostrophe correctly', () => {
-        assert.strictEqual(balanceParenthesis('I\'am good'), '') 
+        assert.strictEqual(balanceParenthesis('WORLD IN CRISIS!'), '')
     })
 
     it('should throw errors when cannot match', () => {
@@ -27,25 +23,11 @@ describe('Test pairing', () => {
         assert.strictEqual(balanceParenthesis('«»«»'), '')
         assert.strictEqual(balanceParenthesis('«»«'), '»')
         assert.strictEqual(balanceParenthesis('»»'), '««')
-        assert.strictEqual(balanceParenthesis('»»❝❞'), '««')
-        assert.strictEqual(balanceParenthesis('»»❝'), '««❞')
     })
 
     it('should throw errors with reversible pairs', () => {
-        assert.throws(() => balanceParenthesis('(»»❝❞)'), PairCannotMatchError)
-        assert.throws(() => balanceParenthesis('»»❝❞)'), PairCannotMatchError)
-        assert.throws(() => balanceParenthesis('(»»❝❞)'), PairCannotMatchError)
-    })
-
-    it('should works with chaotic pairs', () => {
-        '”„“', '’‚‘', '"', '\'',
-        assert.strictEqual(balanceParenthesis('’‚‘'), '’')
-        assert.strictEqual(balanceParenthesis('‘‚'), '')
-        assert.strictEqual(balanceParenthesis('("")‚'), '’')
-    })
-
-    it('should throw errors with chaotic pairs', () => {
-        assert.throws(() => balanceParenthesis('(""")', PairCannotMatchError))
-        assert.throws(() => balanceParenthesis('("‚")', PairCannotMatchError))
+        assert.throws(() => balanceParenthesis('(»»)'), PairCannotMatchError)
+        assert.throws(() => balanceParenthesis('»»)'), PairCannotMatchError)
+        assert.throws(() => balanceParenthesis('(»»)'), PairCannotMatchError)
     })
 })
