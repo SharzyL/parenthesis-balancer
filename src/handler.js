@@ -39,7 +39,6 @@ async function handlePut(request) {
         const queryID = reqBody.inline_query.id
         const queryText = reqBody.inline_query.query
         const balancedText = queryText + balanceParenthesis(queryText)
-        console.log(queryText, balancedText)
         await botRequest('answerInlineQuery', {
             inline_query_id: queryID,
             results: [
