@@ -8,6 +8,9 @@ describe('Test pairing', () => {
         assert.strictEqual(balanceParenthesis('(('), '))')
         assert.strictEqual(balanceParenthesis('(()'), ')')
         assert.strictEqual(balanceParenthesis('([]){['), ']}')
+        assert.strictEqual(balanceParenthesis('«»«»'), '')
+        assert.strictEqual(balanceParenthesis('«»«'), '»')
+        assert.strictEqual(balanceParenthesis('«《》'), '»')
     })
 
     it('should be silent for normal sentences', () => {
@@ -17,15 +20,6 @@ describe('Test pairing', () => {
     it('should throw errors when cannot match', () => {
         assert.throws(() => balanceParenthesis('())'), PairCannotMatchError)
         assert.throws(() => balanceParenthesis('[(]'), PairCannotMatchError)
-    })
-
-    it('should works with reversible pairs', () => {
-        assert.strictEqual(balanceParenthesis('«»«»'), '')
-        assert.strictEqual(balanceParenthesis('«»«'), '»')
-        assert.strictEqual(balanceParenthesis('»»'), '««')
-    })
-
-    it('should throw errors with reversible pairs', () => {
         assert.throws(() => balanceParenthesis('(»»)'), PairCannotMatchError)
         assert.throws(() => balanceParenthesis('»»)'), PairCannotMatchError)
         assert.throws(() => balanceParenthesis('(»»)'), PairCannotMatchError)
