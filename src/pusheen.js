@@ -14,3 +14,7 @@ export function balancePusheen(sticker) {
     }
     return undefined
 }
+
+export function cannotBalance(sticker) {
+    return 'set_name' in sticker && sticker.set_name === 'balanced_pusheen'
+}

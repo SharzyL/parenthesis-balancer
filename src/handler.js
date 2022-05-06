@@ -2,7 +2,7 @@ import { TOKEN } from '../constants.js'
 import { botRequest } from './sender.js'
 import { WorkerError, escapeHtml } from './util.js'
 import { balanceParenthesis, PairCannotMatchError } from './balancer.js'
-import { balancePusheen } from './pusheen.js'
+import { cannotBalance, balancePusheen } from './pusheen.js'
 
 async function handlePut(request) {
     // auth
@@ -24,6 +24,12 @@ async function handlePut(request) {
                 reply_to_message_id: msgID,
                 sticker: retStickerFileID,
                 allow_sending_without_reply: true,
+            })
+        } else if (cannotBalance(reqBody.message.sticker)) {
+            await botRequest('sendMessage', {
+                chat_id: chatID,
+                text: 'WORLD IN CRISIS, CANNOT balance your Pusheen!',
+                reply_to_message_id: msgID,
             })
         }
     } else if ('message' in reqBody && 'chat' in reqBody.message && 'text' in reqBody.message) {
