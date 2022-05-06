@@ -1,11 +1,16 @@
-const stickerFileIdMap = {
-    // pusheen with tail collapsed
-    AgADnQEAAjbsGwU: 'CAACAgUAAxUAAWJ0nUzdQBTWZ4iyMIKfE1X0Ej5UAAKABwACD3GhV71NHSno4gZeJAQ',
-    AgADIAEAAoo3OAAB: 'CAACAgUAAxUAAWJ0nUzdQBTWZ4iyMIKfE1X0Ej5UAAKABwACD3GhV71NHSno4gZeJAQ',
-    AgADNQMAAtcG0VQ: 'CAACAgUAAxUAAWJ0nUzdQBTWZ4iyMIKfE1X0Ej5UAAKABwACD3GhV71NHSno4gZeJAQ',
+const pusheenCollapseTail = 'CAACAgUAAxUAAWJ0nUzdQBTWZ4iyMIKfE1X0Ej5UAAKABwACD3GhV71NHSno4gZeJAQ'
+const pusheenStretchTail = 'CAACAgUAAxUAAWJ0nUz4mY2q2zR1cA1UoCiDds82AAJXBgACtzahVwh-zx9bs-H3JAQ'
+const pusheenStretchTailSmall = 'CAACAgUAAxUAAWJ0p66fqz6uRleXSCx_71YAAVbr5wAC_gQAAhoqqVcFYK598VlajyQE'
 
-    // pusheen with tail stretched
-    'AgAD9wADmY-lBw': 'CAACAgUAAxUAAWJ0nUz4mY2q2zR1cA1UoCiDds82AAJXBgACtzahVwh-zx9bs-H3JAQ',
+const stickerFileIdMap = {
+    AgADnQEAAjbsGwU: pusheenCollapseTail,
+    AgADIAEAAoo3OAAB: pusheenCollapseTail,
+    AgADNQMAAtcG0VQ: pusheenCollapseTail,
+    AgADbgQAAlnE0FQ: pusheenCollapseTail,
+
+    'AgAD9wADmY-lBw': pusheenStretchTail,
+
+    AgADZgUAAimO2FQ: pusheenStretchTailSmall,
 }
 
 export function balancePusheen(sticker) {
