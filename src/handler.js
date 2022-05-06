@@ -2,6 +2,7 @@ import { TOKEN } from '../constants.js'
 import { botRequest } from './sender.js'
 import { WorkerError, escapeHtml } from './util.js'
 import { balanceParenthesis, PairCannotMatchError } from './balancer.js'
+import { balancePusheen } from './pusheen.js'
 
 async function handlePut(request) {
     // auth
@@ -13,7 +14,19 @@ async function handlePut(request) {
     const reqText = await request.text()
     const reqBody = JSON.parse(reqText)
 
-    if ('message' in reqBody && 'chat' in reqBody.message && 'text' in reqBody.message) {
+    if ('message' in reqBody && 'sticker' in reqBody.message) {
+        const chatID = reqBody.message.chat.id
+        const msgID = reqBody.message.message_id
+        const retStickerFileID = balancePusheen(reqBody.message.sticker)
+        if (retStickerFileID) {
+            await botRequest('sendSticker', {
+                chat_id: chatID,
+                reply_to_message_id: msgID,
+                sticker: retStickerFileID,
+                allow_sending_without_reply: true,
+            })
+        }
+    } else if ('message' in reqBody && 'chat' in reqBody.message && 'text' in reqBody.message) {
         const chatID = reqBody.message.chat.id
         const msgID = reqBody.message.message_id
         const msgText = reqBody.message.text
