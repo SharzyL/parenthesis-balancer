@@ -28,7 +28,7 @@ async function handlePut(request) {
         } else if (cannotBalance(reqBody.message.sticker)) {
             await botRequest('sendMessage', {
                 chat_id: chatID,
-                text: 'WORLD IN CRISIS, CANNOT balance your Pusheen!',
+                text: '🍓 IN CRISIS, CANNOT balance your Pusheen!',
                 reply_to_message_id: msgID,
             })
         }
