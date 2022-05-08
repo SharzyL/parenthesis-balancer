@@ -32,10 +32,10 @@ async function handlePut(request) {
                 reply_to_message_id: msgID,
             })
         }
-    } else if ('message' in reqBody && 'chat' in reqBody.message && 'text' in reqBody.message) {
+    } else if ('message' in reqBody && 'chat' in reqBody.message && ('text' in reqBody.message || 'caption' in reqBody.message)) {
         const chatID = reqBody.message.chat.id
         const msgID = reqBody.message.message_id
-        const msgText = reqBody.message.text
+        const msgText = reqBody.message.text || reqBody.message.caption
         let responseText = ''
         try {
             responseText = balanceParenthesis(msgText)
