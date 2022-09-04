@@ -98,12 +98,12 @@ export async function handleRequest(request) {
     try {
         return await handlePut(request)
     } catch (e) {
+        const stackInfo = (e.stack || e).toString()
+        console.log(stackInfo)
+
         if (e instanceof WorkerError) {
             return new Response(e.message, { status: e.statusCode })
         }
-
-        const stackInfo = (e.stack || e).toString()
-        console.log(stackInfo)
 
         return new Response(stackInfo, { status: 500 })
     }

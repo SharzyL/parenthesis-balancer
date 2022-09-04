@@ -14,7 +14,7 @@ export async function botRequest(method, params) {
     const text = await response.text()
     const result = JSON.parse(text)
     if ('ok' in result && !result.ok) {
-        throw WorkerError(500, text)
+        throw new WorkerError(500, text)
     }
     return result
 }
