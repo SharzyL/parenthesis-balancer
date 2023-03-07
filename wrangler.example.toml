@@ -1,6 +1,7 @@
-name = 'parenthesis-balancer'
-type = 'webpack'
-account_id = "12341234321423412345342554325"
-zone_id = "32141235435342523451341245453"
+name = "parenthesis-balancer"
+compatibility_date = "2023-01-28"
+
+account_id = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 workers_dev = true
-webpack_config = "webpack.config.js"
+main = "src/index.js"
+

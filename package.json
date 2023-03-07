@@ -5,14 +5,12 @@
   "main": "dist/worker.js",
   "type": "module",
   "scripts": {
-    "build": "webpack",
-    "test": "webpack --mode=development && mocha",
-    "deploy": "webpack && wrangler publish"
+    "deploy": "wrangler publish"
   },
   "author": "Sharzy L",
   "license": "MIT",
   "devDependencies": {
-    "@cloudflare/wrangler": "^1.20.0",
+    "wrangler": "^1.20.0",
     "eslint": "^8.32.0",
     "eslint-config-airbnb-base": "^15.0.0",
     "eslint-plugin-import": "^2.27.5",
