@@ -4,6 +4,8 @@ const pusheenStretchTail = 'CAACAgUAAxUAAWJ0nUz4mY2q2zR1cA1UoCiDds82AAJXBgACtzah
 const pusheenStretchTailSmall = 'CAACAgUAAxUAAWJ0p66fqz6uRleXSCx_71YAAVbr5wAC_gQAAhoqqVcFYK598VlajyQE'
 const pusheenBadminton = 'CAACAgIAAxkBAAIQbGMUo68ZjO_i7yKWI1xLI0Mp43vQAAJtAgACijc4AAG_3p933iVbqikE'
 
+const enaQuestion = 'CAACAgUAAxkBAAIWQWQq3zA5c4RkNnBi-XYdX84jPL2UAALnBwACT2NoV5nfghMFXr4RLwQ'
+
 const stickerFileIdMap = {
     AgADnQEAAjbsGwU: pusheenCollapseTail,
     AgADIAEAAoo3OAAB: pusheenCollapseTail,
@@ -20,6 +22,8 @@ const stickerFileIdMap = {
     AgADlwEAArsVGgg: pusheenStretchTailSmall,
 
     AgADbQIAAoo3OAAB: pusheenBadminton,
+
+    AgADzQYAAs9IYFc: enaQuestion,
 }
 
 export function balancePusheen(sticker) {
