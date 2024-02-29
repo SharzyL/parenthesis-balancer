@@ -14,6 +14,7 @@ const stickerFileIdMap = {
     AgADRAEAAliiIUY: pusheenCollapseTail,
     AgADlgEAArsVGgg: pusheenCollapseTail,
 
+    AgADZg0AAsZt6FY: pusheenCollapseTailSmile,
     AgAD7AADalkoRg: pusheenCollapseTailSmile,
 
     'AgAD9wADmY-lBw': pusheenStretchTail,
