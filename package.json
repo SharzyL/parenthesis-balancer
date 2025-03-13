@@ -10,13 +10,13 @@
   "author": "Sharzy L",
   "license": "MIT",
   "devDependencies": {
-    "eslint": "^8.57.0",
+    "eslint": "^9.22.0",
     "eslint-config-airbnb-base": "^15.0.0",
-    "eslint-plugin-import": "^2.29.1",
-    "mocha": "^10.3.0",
-    "nock": "^13.5.4",
-    "webpack": "^5.90.3",
-    "webpack-cli": "^5.1.4",
-    "wrangler": "^3.0.0"
+    "eslint-plugin-import": "^2.31.0",
+    "mocha": "^11.1.0",
+    "nock": "^14.0.1",
+    "webpack": "^5.98.0",
+    "webpack-cli": "^6.0.1",
+    "wrangler": "^3.114.1"
   }
 }
