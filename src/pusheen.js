@@ -2,7 +2,7 @@ const pusheenCollapseTail = 'CAACAgUAAxUAAWJ0nUzdQBTWZ4iyMIKfE1X0Ej5UAAKABwACD3G
 const pusheenCollapseTailSmile = 'CAACAgUAAxUAAWJ1BPTuPIpB0sWhUYhtdcxCd5DfAAI7BQACofypVydaepBBbVD9JAQ'
 const pusheenStretchTail = 'CAACAgUAAxUAAWJ0nUz4mY2q2zR1cA1UoCiDds82AAJXBgACtzahVwh-zx9bs-H3JAQ'
 const pusheenStretchTailSmall = 'CAACAgUAAxUAAWJ0p66fqz6uRleXSCx_71YAAVbr5wAC_gQAAhoqqVcFYK598VlajyQE'
-const pusheenBadminton = 'CAACAgIAAxkBAAIQbGMUo68ZjO_i7yKWI1xLI0Mp43vQAAJtAgACijc4AAG_3p933iVbqikE'
+const pusheenBadminton = 'CAACAgUAAxkBAAJZZGnKQWdcno5ppeY5SCWri-1i-WK9AAKUBQACRCUJVKlCWrmBhOyJOgQ'
 const pusheenCurlyMouthCollapseTail = 'CAACAgUAAxkBAAJFNWh48V-BaDav8rPOLT5zzc63BYk9AALNGQACORLIV12jEExibjGWNgQ'
 
 const enaQuestion = 'CAACAgUAAxkBAAIWQWQq3zA5c4RkNnBi-XYdX84jPL2UAALnBwACT2NoV5nfghMFXr4RLwQ'
